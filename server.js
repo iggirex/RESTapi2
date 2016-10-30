@@ -29,27 +29,18 @@ mongodb.MongoClient.connect(process.env.MONGODB_URI, function (err, database) {
   });
 });
 
-// CONTACTS API ROUTES BELOW
+//DONTACT API ROUTES BELOW
 
-// Generic error handler used by all endpoints.
 function handleError(res, reason, message, code) {
   console.log("ERROR: " + reason);
   res.status(code || 500).json({"error": message});
 }
 
-/*  "/contacts"
- *    GET: finds all contacts
- *    POST: creates a new contact
- */
-
 app.get("/contacts", function(req, res) {
-});
-
-app.post("/contacts", function(req, res) {
   var newContact = req.body;
   newContact.createDate = new Date();
 
-  if (!(req.body.firstName || req.body.lastName)) {
+  if(!(req.body.firstName || req.body.lastName)) {
     handleError(res, "Invalid user input", "Must provide a first or last name.", 400);
   }
 
@@ -62,17 +53,18 @@ app.post("/contacts", function(req, res) {
   });
 });
 
-/*  "/contacts/:id"
- *    GET: find contact by id
- *    PUT: update contact by id
- *    DELETE: deletes contact by id
- */
+app.post("/constacts", function(req, res) {
 
-app.get("/contacts/:id", function(req, res) {
+});
+
+app.get("/contact/:id", function(req, res) {
+
 });
 
 app.put("/contacts/:id", function(req, res) {
+
 });
 
 app.delete("/contacts/:id", function(req, res) {
+
 });
