@@ -37,6 +37,10 @@ function handleError(res, reason, message, code) {
 }
 
 app.get("/contacts", function(req, res) {
+
+});
+
+app.post("/contacts", function(req, res) {
   var newContact = req.body;
   newContact.createDate = new Date();
 
@@ -51,10 +55,6 @@ app.get("/contacts", function(req, res) {
       res.status(201).json(doc.ops[0]);
     }
   });
-});
-
-app.post("/contacts", function(req, res) {
-
 });
 
 app.get("/contacts/:id", function(req, res) {
