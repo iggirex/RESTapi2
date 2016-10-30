@@ -53,11 +53,11 @@ app.get("/contacts", function(req, res) {
   });
 });
 
-app.post("/constacts", function(req, res) {
+app.post("/contacts", function(req, res) {
 
 });
 
-app.get("/contact/:id", function(req, res) {
+app.get("/contacts/:id", function(req, res) {
 
 });
 
